@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<code
+        author=""
+        long-name=""
+        mac-debug-target-dir="../debug_cocoa64/sdk"
+        mac-id-header-dir="../../../source/sdksamples/dollytest"
+        mac-project-dir=""
+        mac-release-target-dir="../release_cocoa64/sdk"
+        mac-sdk-dir="../../.."
+        mac-source-dir="../../../source/sdksamples/dollytest"
+        mac-target-type="x86_64"
+        product-type="kInDesignProduct, kInCopyProduct"
+        plugin-type="kUIPlugin"
+        prefix-id="0xe9400"
+        short-name="Dolly"
+        win-debug-intermediate-dir="..\objD"
+        win-debug-target-dir="..\debug\sdk"
+        win-id-header-dir="..\..\..\source\sdksamples\dollytest"
+        win-project-dir=""
+        win-release-intermediate-dir="..\objR"
+        win-release-target-dir="..\release\sdk"
+        win-sdk-dir="..\..\.."
+        win-source-dir="..\..\..\source\sdksamples\dollytest"
+>
+        <vcproj-file/>
+        <rsp-cpp-file/>
+        <rsp-odfrc-file/>
+        <xcodeproj-file/>
+        <xcconfig-plugin-file/>
+        <xcconfig-plugin-debug-file/>
+        <xcconfig-plugin-release-file/>
+        <id-h-file/>
+        <id-cpp-file/>
+        <nostrip-file/>
+        <triggerresourcedeps-file/>
+        <factorylist-file/>
+        <rc-file/><fr-file/>
+        <enus-fr-file/>
+        <jajp-fr-file/>
+        <generate-menu/>
+        <impl-item impl-file="actioncomponent-impl-file" impl-id="kDollyActionComponentImpl" impl-name="DollyActionComponent"/>
+        <generate-dialog/>
+        <impl-item impl-file="dialogcontroller-impl-file" impl-id="kDollyDialogControllerImpl" impl-name="DollyDialogController"/>
+        <impl-item impl-file="dialogobserver-impl-file" impl-id="kDollyDialogObserverImpl" impl-name="DollyDialogObserver"/>
+        <generate-panel/>
+</code>

@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/INPUT_FILES">
+        <file>Resources/mac-input.xml</file>
+        <file>Resources/win-input.xml</file>
+    </qresource>
+    <qresource prefix="/Saxon">
+        <file>Resources/saxon/saxon.jar</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file alias="warning">Resources/icons/warning.svg</file>
+    </qresource>
+</RCC>
