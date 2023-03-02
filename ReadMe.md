@@ -16,7 +16,7 @@ Since java vm no longer works properly on mac os ventura/catalina you can use **
 Open DollyXs.pro file on your `Qt Creator.app` then build as is
 
 ## Using DollyXs
-First of all you need to download Adobe Indesign Plug-in SDK from https://developer.adobe.com/console/home. Unzip the folder whereever you want into your machine.
+First of all you need to download Adobe Indesign Plug-in SDK from https://developer.adobe.com/console/home. Unzip the folder wherever you want into your machine
 
 Adobe Indesign Plug-in SDK folder structure should be as downloaded.
 ```
