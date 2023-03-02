@@ -1,6 +1,6 @@
 # DollyXs Adobe Indesign SDK C++ Plug-in Project Template Builder
 
-Since as java vm no longer works properly on mac os ventura/catalina you can use **DollyXs**. It is a tool that can be used instead of java based dolly developed by Adobe. You can use it to create Adobe Indesign SDK C++ Plug-In project instead on java based Dolly tool shipped with installation. This tool can be used for mac os platform for now (windows related codes were hidden however it can be)
+Since java vm no longer works properly on mac os ventura/catalina you can use **DollyXs**. It is a tool that can be used instead of java based dolly developed by Adobe. You can use it to create Adobe Indesign SDK C++ Plug-In project instead on java based Dolly tool shipped with installation. This tool can be used for mac os platform for now (windows related codes were hidden however it can be)
 
 # Setting Up the Development Environment on macOS
 
