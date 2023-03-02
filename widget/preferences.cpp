@@ -49,14 +49,13 @@ void Preferences::createConnections()
    {
 
       connect(ui->okButton, &QPushButton::clicked, this, [&](){
-	    m_settings->save();
 	    this->close();
 	 });
 
       connect(ui->initApplication, &QToolButton::clicked, this, [&](){
-	    QDir(m_settings->getCachePath()).removeRecursively();
-	    QDir(m_settings->getConfigPath()).removeRecursively();
-	    QDir(m_settings->getDataPath()).removeRecursively();
+	 QDir(m_settings->getCachePath()).removeRecursively();
+	 QDir(m_settings->getConfigPath()).removeRecursively();
+	 QDir(m_settings->getConfigPath()).removeRecursively();
 	 });
 
       connect(ui->onlyActiveArchCheck, &QCheckBox::clicked, this, [&](bool checked){

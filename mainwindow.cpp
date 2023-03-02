@@ -453,7 +453,10 @@ void MainWindow::setSdkRootFolder(QString path)
 
 void MainWindow::transform()
    {
-      QString tmpOutputFile("/Users/mustafa/Desktop/DollyXs-master/xslfile/outputfile.txt");
+      QString dataPath = m_settings->getDataPath();
+      QString tmpOutputFile(dataPath + "/outputfile.txt");
+
+
       auto inputFile = m_settings->platformInputFile;
       auto dollyMainFile = m_settings->dollyMainFile;
 
