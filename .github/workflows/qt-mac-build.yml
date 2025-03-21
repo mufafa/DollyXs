@@ -22,10 +22,17 @@ jobs:
 
     - name: Build Desktop App
       run: |
-        qmake
+        qmake -config release
         make
     - name: Echo Output
       run: ls -all
 
+    - name: Deploy QT App
+      if: always      
+      run: macdeployqt DollyX.app -dmg
+
     - name: Download a Build Artifact
-      uses: actions/download-artifact@v4.2.1    
+      if: always
+      uses: actions/download-artifact@v4.2.1
+      with:
+        name: DollyX.dmg
