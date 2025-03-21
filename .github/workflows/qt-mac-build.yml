@@ -2,9 +2,25 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ] 
   pull_request:
-    branches: [ "master" ]
+    types: [closed]
+    branches: [ "main"]
+    
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Hangi ortamda çalıştırmak istiyorsunuz?'
+        type: choice
+        options:
+        - development
+        - staging
+        - production
+        required: true
+      tag_name:
+        description: 'Release için tag adı'
+        type: string
+        required: false
 
 jobs:
   build:
@@ -38,10 +54,10 @@ jobs:
       id: create_release
       uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }} # GitHub token'ınızı secrets'a ekleyin
+        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }} 
       with:
-        tag_name: ${{ github.run_number }} # otomatik release numarası için
-        release_name: Release ${{ github.run_number }} # Release adı
+        tag_name: ${{ github.run_number }} 
+        release_name: Release ${{ github.run_number }}
         draft: false
         prerelease: false
 
@@ -51,7 +67,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
       with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }} # Bu, create-release adımından gelir
-        asset_path: ${{ steps.find_dmg.outputs.dmg_path }} # DMG dosyasının yolu
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ${{ steps.find_dmg.outputs.dmg_path }} 
         asset_name: DollyXs.dmg
         asset_content_type: application/octet-stream
