@@ -24,13 +24,12 @@ jobs:
       run: |
         qmake -config release
         make
+        macdeployqt DollyXs.app -dmg
+
     - name: Echo Output
       run: ls -all
-
-    - name: Deploy QT App
-      run: macdeployqt DollyX.app -dmg
 
     - name: Download a Build Artifact
       uses: actions/download-artifact@v4.2.1
       with:
-        name: DollyX.dmg
+        name: DollyXs.dmg
