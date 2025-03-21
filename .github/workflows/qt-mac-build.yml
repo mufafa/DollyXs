@@ -3,14 +3,11 @@ name: C/C++ CI
 on:
   push:
     branches: [ "main" ] 
-  pull_request:
-    types: [closed]
-    branches: [ "main"]
     
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Hangi ortamda çalıştırmak istiyorsunuz?'
+        description: 'Select environment'
         type: choice
         options:
         - development
@@ -18,7 +15,7 @@ on:
         - production
         required: true
       tag_name:
-        description: 'Release için tag adı'
+        description: 'Tag name for Release'
         type: string
         required: false
 
