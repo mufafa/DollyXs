@@ -20,5 +20,6 @@ jobs:
 
     - name: Build Desktop App
       run: |
-        ./Users/runner/work/DollyXs/Qt/5.15.2/clang_64/bin/qmake
+        qmake
         make
+    
