@@ -26,10 +26,32 @@ jobs:
         make
         macdeployqt DollyXs.app -dmg
 
-    - name: Echo Output
-      run: ls -all
 
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v4.2.1
+    - name: Find DMG File
+      id: find_dmg
+      run: |
+        find . -name "DollyXs.dmg" -print0 | while IFS= read -r -d $'\0' file; do
+          echo "::set-output name=dmg_path::$file"
+        done
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }} # GitHub token'ınızı secrets'a ekleyin
       with:
-        name: DollyXs.dmg
+        tag_name: ${{ github.run_number }} # otomatik release numarası için
+        release_name: Release ${{ github.run_number }} # Release adı
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      id: upload-release-asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} # Bu, create-release adımından gelir
+        asset_path: ${{ steps.find_dmg.outputs.dmg_path }} # DMG dosyasının yolu
+        asset_name: DollyXs.dmg
+        asset_content_type: application/octet-stream
