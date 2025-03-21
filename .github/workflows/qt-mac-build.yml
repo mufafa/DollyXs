@@ -18,14 +18,16 @@ jobs:
         host: mac
         target: desktop
         version: 6.0.4
-        dir: '${{ github.workspace }}/example/'
+        
 
     - name: Build Desktop App
       run: |
         qmake
         make
+    - name: Echo Output
+      run: ls -all
 
     - name: Download a Build Artifact
       uses: actions/download-artifact@v4.2.1
       with:
-        name: '${{ github.workspace }}/example/DollyX.app'
+        name: '${{ github.workspace }}/DollyX.app'
